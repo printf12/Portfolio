@@ -20,7 +20,7 @@ public class PortfolioController : ControllerBase
 
     // GET: api/Portfolio
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<AppPortfolio>>> GetPortfolios()
+    public async Task<ActionResult<IEnumerable<Portfolio>>> GetPortfolios()
     {
         var portfolio = _context.Portfolios.OrderBy(p => p.Id).ToList();
         return await Task.FromResult(portfolio);
@@ -28,7 +28,7 @@ public class PortfolioController : ControllerBase
 
     // GET:
     [HttpGet("{id}")]
-    public async Task<ActionResult<AppUser>> GetUserAsync(int id)
+    public async Task<ActionResult<User>> GetUserAsync(int id)
     {
         return await _context.User.FindAsync(id);
     }

@@ -1182,28 +1182,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oacheche\\.nuget\\packages\\": {}
+    "C:\\Users\\kaibi\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Hans\\Portfolio\\API\\API.csproj",
+      "projectUniqueName": "C:\\Workspace\\Portfolio\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Hans\\Portfolio\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\oacheche\\.nuget\\packages\\",
-      "outputPath": "C:\\Hans\\Portfolio\\API\\obj\\",
+      "projectPath": "C:\\Workspace\\Portfolio\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\kaibi\\.nuget\\packages\\",
+      "outputPath": "C:\\Workspace\\Portfolio\\API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "C:\\Users\\oacheche\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\kaibi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {},
-        "https://artifactory.amr.kworld.kpmg.com/artifactory/api/nuget/germantax-nuget-local-dev-amr": {},
-        "https://artifactory.amr.kworld.kpmg.com/artifactory/api/nuget/v3/germantax-nuget-local-dev-amr": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
@@ -1254,7 +1258,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
