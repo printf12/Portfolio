@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule}   from '@angular/forms';
 
 import { AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
 import { PortfolioViewComponent } from './portfolio-view/portfolio-view.component';
+import { CreateNewPortfolioComponent } from './Administration/create-new-portfolio/create-new-portfolio.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { PortfolioViewComponent } from './portfolio-view/portfolio-view.componen
     ContactComponent,
     PortfolioComponent,
     BlogViewComponent,
-    PortfolioViewComponent
+    PortfolioViewComponent,
+    CreateNewPortfolioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

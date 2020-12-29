@@ -1,0 +1,29 @@
+<form #createPortfolioForm="ngForm" (ngSubmit)="createPortfolio()" autoComplete="off">
+
+    <h2 class="Text-center text-primary">Create New Portfolio</h2>
+
+    <hr>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="title"
+         [(ngModel)]="model.username" placeholder="Title">
+    </div>
+
+    <div class="form-group">
+        <textarea type="text" class="form-control" name="description"
+         [(ngModel)]="model.description" placeholder="Description">
+        </textarea>
+    </div>
+
+    <div class="form-group">
+        <input type="text" class="form-control" name="image"
+         [(ngModel)]="model.image" placeholder="Image">
+    </div>
+
+    <div class="from-group text-center">
+        <button calss="btn btn-success mr-2" type="submit">Create</button>
+        <button calss="btn btn-success mr-2" (click)="cancel()" type="button">ancel</button>
+
+    </div>
+
+</form>
