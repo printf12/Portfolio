@@ -15,10 +15,10 @@ using System.Threading.Tasks;
 public class PortfolioController : ControllerBase
 {
     private readonly DataContext _context;
-    private readonly IDataRepository<User> _repo;
+    private readonly IDataRepository<Portfolio> _repo;
     private readonly IMapper _mapper;
 
-    public PortfolioController(DataContext context, IDataRepository<User> repo, IMapper mapper)
+    public PortfolioController(DataContext context, IDataRepository<Portfolio> repo, IMapper mapper)
         {
         _context = context;
         _mapper = mapper;
@@ -42,15 +42,15 @@ public class PortfolioController : ControllerBase
 
     // POST: api/Potfolio
     [HttpPost]
-    public async Task<IActionResult> AddPortfolio([FromBody] AddPortfolioDto addPortfolioDto)
+    public async Task<IActionResult> PostPortfolios(Portfolio portfolio)
     {
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
         }
 
-        var portfolio = _mapper.Map<User>(addPortfolioDto);
-        _repo.Add(portfolio);
+        var portfolio1 = _mapper.Map<Portfolio>(portfolio);
+        _repo.Add(portfolio1);
         var savePortfolio = await _repo.SaveAsync(portfolio);
         var portfolioResponse = _mapper.Map<PortfolioResponseDto>(savePortfolio);
 

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jfM4c+X7vqLMI9l/ohfQL5l+42iua2j2+k0LL6uysCRFYvLJBUZTeqj7AMBcHjOorIHxZfH2k/4mBHrsReP4PQ==",
+  "dgSpecHash": "yWo5SvsmZFcs0R8JlwPIwXi//UxLuHVVoIxOsYlsK5i2VkyJe1uHCL6jya2+6UqQSzHOgRmrXwmwBIlHQzKwuQ==",
   "success": true,
   "projectFilePath": "C:\\Workspace\\Portfolio\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kaibi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\kaibi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\kaibi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kaibi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\kaibi\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.0\\microsoft.data.sqlite.core.5.0.0.nupkg.sha512",

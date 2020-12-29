@@ -9,8 +9,10 @@ namespace API.Dtos
     public class AddPortfolioDto
     {
 
-        [Required]
-        public string PortfolioName { get; set; }
-        public string CreatedAt { get; set; }
+        
+        public int Id { get; set; }
+        public string Image { get; set; }
+        public string Description { get; set; }
+        public string Titel { get; set; }
     }
 }
