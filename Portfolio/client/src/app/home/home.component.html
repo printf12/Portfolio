@@ -18,8 +18,11 @@
           <div class="bg-secondary clearfix">
             <div class="inner-text">
               <h3 class=" color-dark no-margin-top">Hello There!</h3>
-              <p>I discovered my passion for design when I was a sophomore in High School; It was then when it became clear what I wanted to do for a living. I pursued my career at the amazing Valencia College where I started my major in Print Design. A year later I took a begginer’s Web class, where I discovered the love for code. After that, I switched my major to Interactive Design and started the never-ending journey of becoming a web developer along with sharpening my eye for design.</p>
-              <p class="no-margin">In 2013 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Ut enim ad minim veniam, quis nostrud exercitation quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              
+              <p *ngFor="let user of users"> {{user.id}} _ {{user.username}} </p>
+
+              <!-- <p>I discovered my passion for design when I was a sophomore in High School; It was then when it became clear what I wanted to do for a living. I pursued my career at the amazing Valencia College where I started my major in Print Design. A year later I took a begginer’s Web class, where I discovered the love for code. After that, I switched my major to Interactive Design and started the never-ending journey of becoming a web developer along with sharpening my eye for design.</p>
+              <p class="no-margin">In 2013 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, Ut enim ad minim veniam, quis nostrud exercitation quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
             </div>
           </div>
           <div class="bg-dark clearfix">
@@ -61,7 +64,7 @@
         </ul>
       </div><!-- END SERVICES-->
     </section><!-- END ABOUT ME -->
-    
+
     <!--PORTFOLIO-->
     <section id="portfolio" class="block-section">
       <!--PORTFOLIO TITLE-->
