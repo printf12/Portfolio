@@ -1,0 +1,10 @@
+C:\Blog\Portfolio\API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Blog\Portfolio\API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Blog\Portfolio\API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Blog\Portfolio\API\bin\Debug\netcoreapp3.1\API.exe
+C:\Blog\Portfolio\API\obj\Debug\netcoreapp3.1\API.csprojAssemblyReference.cache
+C:\Blog\Portfolio\API\obj\Debug\netcoreapp3.1\API.AssemblyInfoInputs.cache
+C:\Blog\Portfolio\API\obj\Debug\netcoreapp3.1\API.AssemblyInfo.cs
+C:\Blog\Portfolio\API\obj\Debug\netcoreapp3.1\API.RazorTargetAssemblyInfo.cache
+C:\Blog\Portfolio\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWebAssets.Manifest.cache
+C:\Blog\Portfolio\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWebAssets.xml
