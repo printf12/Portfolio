@@ -13,8 +13,8 @@ namespace API.Data
         {
 
         }
-        public DbSet<User> User { get; set; }
-        public DbSet<Portfolio> Portfolios { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Portfolio> Portfolios { get; set; }
 
     }
 }
