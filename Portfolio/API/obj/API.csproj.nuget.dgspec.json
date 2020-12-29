@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Blog\\Portfolio\\API\\API.csproj": {}
+    "C:\\Hans\\Portfolio\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Blog\\Portfolio\\API\\API.csproj": {
+    "C:\\Hans\\Portfolio\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Blog\\Portfolio\\API\\API.csproj",
+        "projectUniqueName": "C:\\Hans\\Portfolio\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Blog\\Portfolio\\API\\API.csproj",
+        "projectPath": "C:\\Hans\\Portfolio\\API\\API.csproj",
         "packagesPath": "C:\\Users\\oacheche\\.nuget\\packages\\",
-        "outputPath": "C:\\Blog\\Portfolio\\API\\obj\\",
+        "outputPath": "C:\\Hans\\Portfolio\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\oacheche\\AppData\\Roaming\\NuGet\\NuGet.Config",

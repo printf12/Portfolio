@@ -1014,11 +1014,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Blog\\Portfolio\\API\\API.csproj",
+      "projectUniqueName": "C:\\Hans\\Portfolio\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Blog\\Portfolio\\API\\API.csproj",
+      "projectPath": "C:\\Hans\\Portfolio\\API\\API.csproj",
       "packagesPath": "C:\\Users\\oacheche\\.nuget\\packages\\",
-      "outputPath": "c:\\Blog\\Portfolio\\API\\obj\\",
+      "outputPath": "C:\\Hans\\Portfolio\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\oacheche\\AppData\\Roaming\\NuGet\\NuGet.Config",
