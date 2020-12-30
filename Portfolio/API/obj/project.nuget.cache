@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "yWo5SvsmZFcs0R8JlwPIwXi//UxLuHVVoIxOsYlsK5i2VkyJe1uHCL6jya2+6UqQSzHOgRmrXwmwBIlHQzKwuQ==",
+  "dgSpecHash": "GrfYAoddr7d8/aGrO0Cshvh9ruCIYHbP1muaAHyG+Eu28geWCtKC0TFROoNyreYPDMLmKmZM6FP0imGNbo/K0w==",
   "success": true,
   "projectFilePath": "C:\\Workspace\\Portfolio\\API\\API.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\kaibi\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\kaibi\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\kaibi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "C:\\Users\\kaibi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\kaibi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

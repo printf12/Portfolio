@@ -10,11 +10,13 @@ export class HomeComponent implements OnInit {
 
   users: any;
   portfolios: any;
+  blogs: any;
   constructor(private http: HttpClient) {}
 
   ngOnInit(){
     this.getUsers();
     this.getPortfolios();
+    this.getBlogs();
   }
 
   getUsers(){
@@ -32,5 +34,10 @@ export class HomeComponent implements OnInit {
         console.error();
     })
   }
+
+  async getBlogs() {
+    this.blogs = await this.http.get("https://localhost:44376/api/blog").toPromise();
+  }
+      
 
 }

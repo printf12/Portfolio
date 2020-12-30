@@ -1,10 +1,10 @@
 ﻿using API.Data;
 using API.Dtos;
+using API.Dtos.Blog;
 using API.Entities;
 using API.Repositories;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -52,7 +52,7 @@ public class PortfolioController : ControllerBase
         var portfolio1 = _mapper.Map<Portfolio>(portfolio);
         _repo.Add(portfolio1);
         var savePortfolio = await _repo.SaveAsync(portfolio);
-        var portfolioResponse = _mapper.Map<PortfolioResponseDto>(savePortfolio);
+        var portfolioResponse = _mapper.Map<BlogResponseDto>(savePortfolio);
 
         return StatusCode(201, new { portfolioResponse });
     }
