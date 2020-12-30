@@ -8,6 +8,8 @@ namespace API.Dtos.Blog
 {
     public class EditBlogDto
     {
+        [Required]
+        public int Id { get; set; }
         public int BlogTitle { get; set; }
         public string BlogDescription { get; set; }
         public string BlogCategory { get; set; }

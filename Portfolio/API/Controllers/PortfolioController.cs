@@ -52,7 +52,7 @@ public class PortfolioController : ControllerBase
         var portfolio1 = _mapper.Map<Portfolio>(portfolio);
         _repo.Add(portfolio1);
         var savePortfolio = await _repo.SaveAsync(portfolio);
-        var portfolioResponse = _mapper.Map<BlogResponseDto>(savePortfolio);
+        var portfolioResponse = _mapper.Map<PortfolioResponseDto>(savePortfolio);
 
         return StatusCode(201, new { portfolioResponse });
     }

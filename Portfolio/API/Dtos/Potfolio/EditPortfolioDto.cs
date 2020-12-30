@@ -8,6 +8,8 @@ namespace API.Dtos
 {
     public class EditPortfolioDto
     {
+        [Required]
+        public int Id { get; set; }
         public int Image { get; set; }
         public string Description { get; set; }
         public string Titel { get; set; }

@@ -8,7 +8,7 @@ namespace API.Dtos.Blog
 {
     public class AddBlogDto
     {
-        [Required]
+        
         public string BlogTitle { get; set; }
         public string BlogDescription { get; set; }
         public string BlogCategory { get; set; }
