@@ -217,7 +217,7 @@
             <div id="myTabContent" class="tab-content flat-tab-content">
               <div class="tab-pane fade in active" id="tab0">
                 <form method="post" id="contactForm" name="contactForm" novalidate="novalidate">
-                  <input type="hidden" name="subject" value="Message Contact Form">
+                  <input type="hidden" name="subject" value="Message Contact Form" >
                   <div class="form-group">
                     <label>Your Name (*)</label>
                     <input type="text" class="form-control form-flat" name="fullname" required="" aria-required="true">
@@ -234,7 +234,7 @@
                     <div id="captcha1"></div>
                   </div>
                   <div class="form-group ">
-                    <button type="submit" class="btn btn-flat-solid primary-btn">Send Message</button>
+                    <button class="btn btn-flat-solid primary-btn" (click)="sendContactMessage(contactForm)">Send Message</button>
                   </div>
                   <div class="form-group">
                     <div class="preload-submit hidden"><hr> <i class="fa fa-spinner fa-spin"></i> Please Wait ...</div>

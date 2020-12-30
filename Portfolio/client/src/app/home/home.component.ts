@@ -46,6 +46,10 @@ export class HomeComponent implements OnInit {
       console.error();
     })
   }
+
+  sendContactMessage() {
+    console.log("sendContactMessage")
+  }
       
 
 }
