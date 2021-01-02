@@ -20,19 +20,38 @@ namespace API
 {
     public class Startup
     {
-        private readonly IConfiguration _config;
-
-        public Startup(IConfiguration config)
+        public Startup(IConfiguration configuration)
         {
-            _config = config;
+            Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
+
+            services.AddControllers();
+
+            services.AddSignalR().AddMessagePackProtocol();
+
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder
+                        .WithOrigins(
+                        "http://localhost")
+                        .AllowCredentials()
+                        .AllowAnyHeader()
+                        .SetIsOriginAllowed(_ => true)
+                        .AllowAnyMethod();
+                });
+            });
             services.AddDbContext<DataContext>(options =>
             {
-                options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
+                options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"));
             });
 
 
@@ -44,13 +63,9 @@ namespace API
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddControllers();
-            services.AddCors();
             services.AddScoped(typeof(IDataRepository<>), typeof(DataRepository<>));
 
         }
-
-
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -60,17 +75,18 @@ namespace API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
 
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<ChatHub>("/signalr");
             });
         }
     }

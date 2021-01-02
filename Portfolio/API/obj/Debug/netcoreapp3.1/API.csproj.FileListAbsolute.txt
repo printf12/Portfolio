@@ -71,6 +71,14 @@ C:\Hans\Portfolio\API\obj\Debug\netcoreapp3.1\API.pdb
 C:\Hans\Portfolio\API\obj\Debug\netcoreapp3.1\API.genruntimeconfig.cache
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\angular.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\e2e\tsconfig.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\package-lock.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\package.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\tsconfig.app.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\tsconfig.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\tsconfig.spec.json
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\client\tslint.json
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\API.exe
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\API.deps.json
@@ -78,7 +86,16 @@ C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\API.runtimeconfig.json
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\API.runtimeconfig.dev.json
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\API.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\API.pdb
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\MessagePack.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\MessagePack.Annotations.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SignalR.Protocols.MessagePack.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
@@ -96,6 +113,7 @@ C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
@@ -103,6 +121,8 @@ C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\System.Net.WebSockets.WebSocketProtocol.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\System.Text.Encodings.Web.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\System.Text.Json.dll
 C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
@@ -121,6 +141,8 @@ C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sql
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.csprojAssemblyReference.cache
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.AssemblyInfoInputs.cache
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.AssemblyInfo.cs
+C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
+C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.RazorTargetAssemblyInfo.cache
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.csproj.CopyComplete
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWebAssets.Manifest.cache
@@ -128,7 +150,3 @@ C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\staticwebassets\API.StaticWeb
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.dll
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.pdb
 C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.genruntimeconfig.cache
-C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\AutoMapper.dll
-C:\Workspace\Portfolio\API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.csproj.CoreCompileInputs.cache
-C:\Workspace\Portfolio\API\obj\Debug\netcoreapp3.1\API.MvcApplicationPartsAssemblyInfo.cache
