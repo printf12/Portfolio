@@ -1,0 +1,148 @@
+<button [routerLink]="['/admin']" class="m-1 btn btn-light btn-outline-primary">Back to home</button>
+<section id="project" class="block-section">
+  <div class="block-page">
+    <div class="container-medium">
+      <div class="row">
+        <button type="button" class="btn btn-primary float-right m-2" 
+data-toggle="modal" data-target="#exampleModal"
+(click)="showCreateProject()"
+data-backdrop="static" data-keyboard="false"
+>
+    Create Project
+  </button>
+
+  
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Date of Creation</th>
+          <th>Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let project of projects">
+          <td>{{project.title}}</td>
+          <td>{{project.description}}</td>
+          <td><img src="../api/docs/{{project.image}}" width="50" height="50"></td>
+          <td>{{project.creationDate}}</td>
+          <td>
+              <button type="button" class="btn btn-light mr-1"
+              data-toggle="modal" data-target="#exampleModal"
+(click)="showEditProject(project)"
+data-backdrop="static" data-keyboard="false"
+              >
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg>
+              </button>
+              <button type="button" class="btn btn-light mr-1"
+              (click)="deleteProject(project)"
+              >
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                </svg>
+              </button>
+          </td>
+      </tr>
+  </tbody>
+</table>
+<div *ngIf="showCreate" id="createProjectDiv">
+  <h3> Create Project</h3>
+  <form novalidate="" class="ng-pristine ng-valid ng-touched" #form="ngForm">
+
+    <div class="row">
+       <div class="col-md-4">
+          <div class="form-group">
+              <label>Title(*)</label>
+              <input class="form-control form-flat ng-untouched ng-pristine ng-valid" placeholder="Title"
+              name="title" #title="ngModel" [(ngModel)]="project.titel" required [class.invalid]="title.invalid
+              && title.touched">
+            </div>
+       </div>
+
+       <div class="col-md-4">
+        <div class="form-group">
+            <label>Url(*)</label>
+            <input class="form-control form-flat ng-untouched ng-pristine ng-valid" placeholder="url"
+            name="url" #url="ngModel" [(ngModel)]="project.url" required [class.invalid]="url.invalid
+            && url.touched">
+          </div>
+     </div>
+
+     <div class="col-md-4">
+        <div _ngcontent-qsp-c48="" class="form-group">
+            <label _ngcontent-qsp-c48="">Upload</label>
+            <div _ngcontent-qsp-c48="" class="clearfix" >
+                <img [src]="imageSrc" style="width: 250px; height: 250px;" *ngIf="showImagePreview">
+                <input _ngcontent-qsp-c48="" type="file" class="btn btn-flat-solid btn-file btn-xs btn-default clearfix" accept="image/*" 
+                #upload="ngModel" [(ngModel)]="project.file"
+                (change)="fileChange($event)"/>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Description(*)</label>
+        <textarea name="description" #description="ngModel" [(ngModel)]="project.description" required [class.invalid]="description.invalid
+        && description.touched" rows="4" class="form-control form-flat ng-pristine ng-valid ng-touched"></textarea>
+    </div>
+    <div class="form-group">
+        <button (click)="createProject(project);"  class="btn btn-flat-solid primary-btn" [disabled]="form.invalid">Create Project</button>
+    </div>
+ </form>
+
+</div>
+
+
+<div *ngIf="showEdit" class="editProjectDiv">
+  <h3> Edit Project</h3>
+  <form novalidate="" class="ng-pristine ng-valid ng-touched" #form="ngForm">
+
+    <div class="row">
+       <div class="col-md-4">
+          <div class="form-group">
+              <label>Title(*)</label>
+              <input class="form-control form-flat ng-untouched ng-pristine ng-valid" placeholder="Title"
+              name="title" #title="ngModel" [(ngModel)]="editedProject.title" required [class.invalid]="title.invalid
+              && title.touched">
+            </div>
+       </div>
+
+     <div class="col-md-4">
+        <div _ngcontent-qsp-c48="" class="form-group">
+            <label _ngcontent-qsp-c48="">Upload</label>
+            <div _ngcontent-qsp-c48="" class="clearfix" >
+                <img  src="{{imageSrc}}" style="width: 250px; height: 250px;" *ngIf="showImagePreview">
+                <img  src="../api/docs/{{editedProject.image}}" style="width: 250px; height: 250px;" *ngIf="!showImagePreview">
+                <input _ngcontent-qsp-c48="" type="file" class="btn btn-flat-solid btn-file btn-xs btn-default clearfix" accept="image/*" 
+                #upload="ngModel" [(ngModel)]="editedProject.file"
+                (change)="fileChange($event)"/>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label>Description(*)</label>
+        <textarea name="description" #description="ngModel" [(ngModel)]="editedProject.description" required [class.invalid]="description.invalid
+        && description.touched" rows="4" class="form-control form-flat ng-pristine ng-valid ng-touched"></textarea>
+    </div>
+    <div class="form-group">
+        <button (click)="editProject(editedProject);"  class="btn btn-flat-solid primary-btn" [disabled]="form.invalid">Edit Project</button>
+    </div>
+ </form>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+</section>
