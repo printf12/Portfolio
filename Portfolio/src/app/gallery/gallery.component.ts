@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-gallery',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  galleries: any;
+  constructor(private shared: SharedService) { }
 
+  
   ngOnInit(): void {
+    this.shared.getGalleriesList().subscribe((res:any) => {
+      this.galleries = res['data'];
+    })
   }
+
+  
 
 }

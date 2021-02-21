@@ -27,6 +27,14 @@ import { RouterModule } from '@angular/router';
 import { AdminBlogsHomeComponent } from './admin/admin-blogs-home/admin-blogs-home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AudioComponent } from './audio/audio.component';
+import { LoginComponent } from './admin/login/login.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import { AdminGalleryComponent } from './admin/admin-gallery/admin-gallery.component';
+import { AdminAudioHomeComponent } from './admin/admin-audio-home/admin-audio-home.component';
+import { AdminAlbumComponent } from './admin/admin-album/admin-album.component';
 
 
 
@@ -48,7 +56,11 @@ import { AudioComponent } from './audio/audio.component';
     AdminProjectsHomeComponent,
     AdminBlogsHomeComponent,
     GalleryComponent,
-    AudioComponent
+    AudioComponent,
+    LoginComponent,
+    AdminGalleryComponent,
+    AdminAudioHomeComponent,
+    AdminAlbumComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +71,12 @@ import { AudioComponent } from './audio/audio.component';
     DpDatePickerModule,
     CommonModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot() 
+    ToastrModule.forRoot() ,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

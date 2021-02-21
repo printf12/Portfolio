@@ -1,24 +1,21 @@
 
 
-<section id="audios" class="block-section">
-    <button (click)="logout()" class="m-1 btn btn-light btn-outline-primary" style="right: 0!important;position: absolute!important;">Logout</button>
+<section id="albums" class="block-section">
     <div class="block-page">
       <div class="container-medium clearfix">
         <div class="row list-work">
-          <div class="col-md-4 col-sm-6" *ngFor="let tab of tabList">
+          <div class="col-md-4 col-sm-6" *ngFor="let album of albums">
             <div class="box-work" style="border: unset!important;">
-              <div class="work-preview" >
-                
+              <div class="work-preview">
                 <mat-card class="example-card" >
                     <mat-card-header>
-                      
-                      <mat-card-title>{{tab.name}}</mat-card-title>
+                      <mat-card-title>{{album.name}}</mat-card-title>
                     </mat-card-header>
                     <mat-card-content>
                     </mat-card-content>
                     <mat-card-actions>
-                        <button mat-mini-fab (click)="navigateTo(tab.name)">
-                            <mat-icon>{{tab.icon}}</mat-icon>
+                        <button mat-mini-fab (click)="getAudiosByAlbum(album.name)">
+                            <mat-icon>{{album.icon}}</mat-icon>
                         </button>
                     </mat-card-actions>
                 </mat-card>

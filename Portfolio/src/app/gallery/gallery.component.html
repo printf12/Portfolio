@@ -1,12 +1,41 @@
-<div class="row">
-    <div class="col-md-4">
-      <img src="https://backgrounds.wetransfer.net/cp_eslami/eslami1_t1_v1/assets/images/img2.png" height="300px">
+<section id="gallery" class="block-section">
+  <!-- TITLE PAGE-->
+  <div class=" shape-bottom">
+    <div class="bg-secondary block-title">
+      <div class="container">
+        <h2 class="text-uppercase color-dark text-bold no-margin">Gallery</h2>
+        <div class="title-icon"> <i class="fa fa-image"></i> </div>
+      </div>
     </div>
-    <div class="col-md-4">
-        <img src="https://backgrounds.wetransfer.net/cp_eslami/eslami1_t1_v1/assets/images/img2.png" height="300px">
-      </div>
-      <div class="col-md-4">
-        <img src="https://backgrounds.wetransfer.net/cp_eslami/eslami1_t1_v1/assets/images/img2.png" height="300px">
-      </div>
-</div>
+  </div><!--END  TITLE PAGE-->
+
+  <div class="block-page">
+    <div class="container-medium clearfix">
+      <div class="row list-work">
+        <div class="col-md-4 col-sm-6" *ngFor="let gallery of galleries">
+          <div class="box-work">
+            <div class="work-preview">
+              <img src="../api/docs/{{gallery.image}}" alt="{{gallery.image}}">
+              <div class="hover" style="text-align: center;">
+                <div class="link-btns">
+                </div>
+                <a class="gallery-title">{{gallery.title}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--End List Work-->
+
+      <!--Pagination-->
+      <!--<div class="text-center">
+        <ul class="pagination flat-pagination ">
+          <li><a href="#">Prev</a></li>
+          <li *ngFor="let item of numbersArray; let i = index" (click)="getPagePerIndex(i)"><span>{{item}}</span></li>
+          <li><a href="#">Next</a></li>
+        </ul>
+      </div>-->
+      <!--End Pagination-->
+    </div>
+  </div>
+</section>
             

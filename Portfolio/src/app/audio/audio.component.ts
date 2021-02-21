@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-audio',
@@ -7,12 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AudioComponent implements OnInit {
 
-  constructor() { }
+  constructor(private shared : SharedService) { }
 
+  audios: any;
   ngOnInit(): void {
+    this.shared.getAudiosList().subscribe((res:any) => {
+      this.audios = res['data'];
+    })
     
   }
-
-  
-
 }

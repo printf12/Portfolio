@@ -14,6 +14,10 @@ import { AdminProjectsHomeComponent } from './admin/admin-projects-home/admin-pr
 import { AdminBlogsHomeComponent } from './admin/admin-blogs-home/admin-blogs-home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { AudioComponent } from './audio/audio.component';
+import { LoginComponent } from './admin/login/login.component';
+import { AdminGalleryComponent } from './admin/admin-gallery/admin-gallery.component';
+import { AdminAudioHomeComponent } from './admin/admin-audio-home/admin-audio-home.component';
+import { AdminAlbumComponent } from './admin/admin-album/admin-album.component';
 
 
 
@@ -29,10 +33,14 @@ const routes: Routes = [
   { path: 'createPortfolio', component: CreatePortfolioFormComponent, pathMatch: 'full' },
   { path: 'contact', component: ContactComponent,pathMatch: 'full' },
   { path: 'admin', component: AdminComponent,pathMatch: 'full' },
+  { path: 'admin/gallery', component: AdminGalleryComponent,pathMatch: 'full' },
   { path: 'gallery', component: GalleryComponent,pathMatch: 'full' },
   { path: 'audio', component: AudioComponent,pathMatch: 'full' },
   { path: 'admin/projects', component: AdminProjectsHomeComponent,pathMatch: 'full' },
   { path: 'admin/blogs', component: AdminBlogsHomeComponent,pathMatch: 'full' },
+  { path: 'admin/login', component: LoginComponent,pathMatch: 'full' },
+  { path: 'admin/audio', component: AdminAudioHomeComponent,pathMatch: 'full' },
+  { path: 'admin/albums', component: AdminAlbumComponent,pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent ,pathMatch: 'full'},
 ];
 

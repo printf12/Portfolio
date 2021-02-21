@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private sharedService:SharedService, private toastr: ToastrService) { }
 
+  contactForm: FormGroup;
+ 
   ngOnInit(): void {
+    this.contactForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', Validators.required],
+      message: ['', Validators.required],
+      subject: ['', Validators.required]
+    });
+  }
+
+  onSubmit() {
+    this.sharedService.sendMail(this.contactForm.value).subscribe((res:any) => {
+      this.toastr.success('Email sent to Admin successfully');
+      this.contactForm.reset();
+    });
   }
 
 }

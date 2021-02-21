@@ -1,88 +1,46 @@
-<section id="blog" class="block-section">
+
+
+<section id="audios" class="block-section">
+  <!-- TITLE PAGE-->
   <div class=" shape-bottom">
     <div class="bg-secondary block-title">
       <div class="container">
-        <div class="row">
-            <div class="col-md-3" style="margin-right: 50px;">
-                
-              <div>
-                <p>High Noon</p>
-                <audio controls id="test">
-                  <source src="../../assets/theme/audios/01 High Noon.wav" type="audio/wav" >
-                Your browser does not support the audio element.
-                </audio>
-              </div>
-              <div>
-                <p>Was ich habe</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/02 Was ich habe.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
-              <div>
-                <p>Open a Window</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/03 Open a Window.wav" type="audio/ogg">
-                  Your browser does not support the audio element.
-                </audio>
-              </div>
-            </div>
-
-            <div class="col-md-3" style="margin-right: 50px;">
-              <div>
-                <p>Wave Song</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/04 Wave Song.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-                </div>
-
-                <div>
-                  <p>Märchen</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/05 Märchen.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-                </div>
-
-                
-                <div>
-                  <p>Tell Your Deepest Dark Goodbye</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/06 Tell Your Deepest Dark Goodbye.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-                </div>
-            </div>
-        <div class="col-md-3" style="margin-right: 50px;">
-                <div>
-                  <p>Schlaflied</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/07 Schlaflied.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-                </div>
-
-                <div>
-                  <p>Reality</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/08 Reality.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-                </div>
-
-                <div>
-                  <p>Shame</p>
-                <audio controls>
-                    <source src="../../assets/theme/audios/09 Shame.wav" type="audio/wav">
-                  Your browser does not support the audio element.
-                </audio>
-                </div>
-      </div>
-            </div>
-          
-        </div>
+        <h2 class="text-uppercase color-dark text-bold no-margin">Audios</h2>
+        <div class="title-icon"> <i class="fa fa-music"></i> </div>
       </div>
     </div>
+  </div><!--END  TITLE PAGE-->
+
+  <div class="block-page">
+    <div class="container-medium clearfix">
+      <div class="row list-work">
+        <div class="col-md-4 col-sm-6" *ngFor="let audio of audios">
+          <div class="box-work" style="border: unset!important;">
+            <div class="work-preview">
+              <div style="text-align: center!important;">
+                <span class="audio-title">{{audio.title}}</span>
+              </div>
+              
+              <audio controls>
+                <source src="../api/docs/{{audio.audioName}}" type="audio/wav">
+              Your browser does not support the audio element.
+            </audio>
+            </div>
+          </div>
+        </div>
+      </div><!--End List Work-->
+
+      <!--Pagination-->
+      <!--<div class="text-center">
+        <ul class="pagination flat-pagination ">
+          <li><a href="#">Prev</a></li>
+          <li *ngFor="let item of numbersArray; let i = index" (click)="getPagePerIndex(i)"><span>{{item}}</span></li>
+          <li><a href="#">Next</a></li>
+        </ul>
+      </div>-->
+      <!--End Pagination-->
+    </div>
+  </div>
 </section>
             
+
