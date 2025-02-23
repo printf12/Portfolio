@@ -1,0 +1,34 @@
+
+
+<section id="audios" class="block-section">
+    <button (click)="logout()" class="m-1 btn btn-light btn-outline-primary" style="right: 0!important;position: absolute!important;">Logout</button>
+    <div class="block-page">
+      <div class="container-medium clearfix">
+        <div class="row list-work">
+          <div class="col-md-4 col-sm-6" *ngFor="let tab of tabList">
+            <div class="box-work" style="border: unset!important;">
+              <div class="work-preview" >
+                
+                <mat-card class="example-card" >
+                    <mat-card-header>
+                      
+                      <mat-card-title>{{tab.name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-mini-fab (click)="navigateTo(tab.name)">
+                            <mat-icon>{{tab.icon}}</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+              
+  

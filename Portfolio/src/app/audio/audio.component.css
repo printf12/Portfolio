@@ -1,0 +1,22 @@
+p {
+    color: black;
+    font-size: small;
+    font-weight: 800;
+}
+
+audio {
+    border: 2px solid gray;
+    border-radius: 61px;
+}
+
+
+.bg-secondary {
+    background-color: unset!important;
+}
+
+.audio-title {
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    
+}

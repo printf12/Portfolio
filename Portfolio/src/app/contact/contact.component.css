@@ -1,0 +1,20 @@
+.bg-dark {
+    background-color: unset!important;
+    margin-bottom: 25px;
+}
+
+.color-light {
+    color: black!important;
+}
+
+.flat-tab-content {
+    padding-top: 0!important;;
+}
+
+.contact-area .form-contact-area .inner-contact {
+    padding: 20px 40px 60px 0;
+}
+
+.contact-area .map-area:before {
+    background: unset!important;
+}

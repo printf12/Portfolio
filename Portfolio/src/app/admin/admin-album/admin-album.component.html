@@ -1,0 +1,31 @@
+
+
+<section id="albums" class="block-section">
+    <div class="block-page">
+      <div class="container-medium clearfix">
+        <div class="row list-work">
+          <div class="col-md-4 col-sm-6" *ngFor="let album of albums">
+            <div class="box-work" style="border: unset!important;">
+              <div class="work-preview">
+                <mat-card class="example-card" >
+                    <mat-card-header>
+                      <mat-card-title>{{album.name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-mini-fab (click)="getAudiosByAlbum(album.name)">
+                            <mat-icon>{{album.icon}}</mat-icon>
+                        </button>
+                    </mat-card-actions>
+                </mat-card>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+              
+  

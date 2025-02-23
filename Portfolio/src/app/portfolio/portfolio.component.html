@@ -1,0 +1,42 @@
+<section id="portfolio" class="block-section">
+    <!-- TITLE PAGE-->
+    <div class=" shape-bottom">
+      <div class="bg-secondary block-title">
+        <div class="container">
+          <h2 class="text-uppercase color-dark text-bold no-margin">Projects</h2>
+          <div class="title-icon"> <i class="fa fa-inbox"></i> </div>
+        </div>
+      </div>
+    </div><!--END  TITLE PAGE-->
+
+    <div class="block-page">
+      <div class="container-medium clearfix">
+        <div class="row list-work">
+          <div class="col-md-4 col-sm-6" *ngFor="let project of projects">
+            <div class="box-work">
+              <div class="work-preview">
+                <img src="../api/docs/{{project.image}}" alt="{{project.image}}">
+                <div class="hover">
+                  <div class="link-btns">
+                    <!--<a href="{{project.image}}" title="pic 02" class="galery-item"><i class="fa fa-search-plus"></i></a>-->
+                    <a [routerLink] = "['/portfolioView', project.id]"><i class="fa fa-link"></i></a>
+                  </div>
+                  <a [routerLink] = "['/portfolioView', project.id]" class="project-title">{{project.titel}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!--End List Work-->
+
+        <!--Pagination-->
+        <div class="text-center">
+          <ul class="pagination flat-pagination ">
+            <!--<li><a href="#">Prev</a></li>-->
+            <li *ngFor="let item of numbersArray; let i = index" (click)="getPagePerIndex(i)"><span>{{item}}</span></li>
+            <!--<li><a href="#">Next</a></li>-->
+          </ul>
+        </div>
+        <!--End Pagination-->
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,92 @@
+
+<div class="pace  pace-inactive"><div class="pace-progress" data-progress-text="100%" data-progress="99" style="width: 100%;">
+    <div class="pace-progress-inner"></div>
+  </div>
+  <div class="pace-activity"></div></div>
+  <div class="wrapper" style="visibility: visible; opacity: 1;">
+    <!-- ABOUT ME -->
+    <section id="about" class="block-section">
+      <img src="../../assets/theme/images/my-pict.jpg" height="360" width="100%">
+    </section>
+
+    <!--PORTFOLIO-->
+    <section id="portfolio" class="block-section">
+      <!--PORTFOLIO TITLE-->
+      <div class=" shape-bottom">
+        <div class="bg-secondary block-title">
+          <div class="container">
+            <h2 class="text-uppercase color-dark text-bold no-margin">Projects</h2>
+            <div class="title-icon"> <i class="fa fa-folder-open"></i> </div>
+          </div>
+        </div>
+      </div><!--END PORTFOLIO TITLE-->
+
+      <!--List WOrk-->
+      <div class="block-page">
+
+
+        <div class="container-medium clearfix">
+          <div class="row list-work">
+
+            <div *ngFor="let project of projects; let i=index" class="col-md-4 col-sm-6">
+              <div class="box-work">
+                <div class="work-preview">
+                  <img src="../api/docs/{{project.image}}" alt=""/>
+                  <div class="hover">
+                    <a [routerLink] = "['/portfolioView', project.id]" class="project-title">{{project.titel}}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--BTN SHOW MORE-->
+          <div class="box-btn-more"><button class="btn btn-flat-line btn-link" id="more-blog" (click)="showMoreProjects(projects.length)"> Show More</button></div>
+        </div>
+      </div>
+    </section><!--END PORTFOLIO-->
+
+    <!--BLOG-->
+    <section id="blog" class="block-section">
+      <!--BLOG TITLE-->
+      <div class=" shape-bottom">
+        <div class="bg-secondary block-title">
+          <div class="container">
+            <h2 class="text-uppercase color-dark text-bold no-margin">Blog</h2>
+            <div class="title-icon"> <i class="fa fa-comments-o"></i> </div>
+          </div>
+        </div>
+      </div><!--END BLOG TITLE-->
+
+      <div class="block-page">
+        <div class="container-medium">
+          <!--LIST BLOG-->
+          <ul class="list-unstyled list-blog">
+            <li>
+              <div *ngFor="let blog of blogs; let i = index;" class="clearfix box-blog">
+                <div class="blog-bg" >
+                  <img src="../api/docs/{{blog.image}}"/>
+                  <!--<div class="blog-ic"><i class="fa fa-pencil"></i></div>-->
+                </div>
+                <div class="blog-content">
+                  <h5 class="text-uppercase color-dark text-bold">{{blog.title}}</h5>
+                  <div class="post-meta font-alt">
+                    <span><i class="fa fa-calendar"></i> {{blog.creationDate | date: "yyyy-MM-dd hh:mm"}}</span>
+                    <span><i class="fa fa-user"></i> Jack</span>
+                    <span><i class="fa fa-folder-o"></i> {{blog.blogType}}</span>
+                  </div>
+                  <p>{{blog.description}}</p>
+                  <a [routerLink] = "['/blogView', blog.id]" class="btn btn-xs btn-flat-solid primary-btn">Read More</a>
+                </div>
+              </div>
+            </li>
+          </ul> <!--END LIST BLOG-->
+
+          <!--BTN SHOW MORE-->
+          <div class="box-btn-more"><button class="btn btn-flat-line btn-link" id="more-blog" (click)="showMoreBlogs(blogs.length)"> Show More</button></div>
+        </div>
+      </div>
+    </section> <!--END BLOG-->
+
+    <!--CONTACT-->
+   
+  </div>

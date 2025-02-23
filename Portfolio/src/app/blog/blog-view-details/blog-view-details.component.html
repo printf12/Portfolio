@@ -1,0 +1,117 @@
+
+<section id="blog" class="block-section">
+  <div class=" shape-bottom">
+    <div class="bg-secondary block-title">
+      <div class="container">
+        <h2 class="text-uppercase color-dark text-bold no-margin">{{blogDetails.title}}</h2>
+        <div class="title-icon"> <i class="fa fa-inbox"></i> </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BLOG CONTENT  -->
+  <div class="block-page">
+    <div class="container-medium">
+      <div class="row">
+        <div class="col-md-9">
+          <div class="blog-content">
+            <img src="../api/docs/{{blogDetails.image}}" alt="" class="img-responsive">
+            <div class="white-space-20"></div>
+            <div class="post-meta font-alt">
+              <span><i class="fa fa-calendar"></i> {{blogDetails.creationDate | date:'dd/MM/yyyy hh:mm'}}</span>
+              <span><i class="fa fa-user"></i> Jack</span>
+              <span><i class="fa fa-folder-o"></i> {{blogDetails.blogType}}</span>
+            </div>
+            <p>{{blogDetails.description}}</p>
+
+          </div>
+
+          <!--<audio controls>
+            <source src="horse.ogg" type="audio/ogg">
+            <source src="horse.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>-->
+          
+          <div class="white-space-40"></div>
+          <h4 class="color-dark text-uppercase text-bold">Comments</h4>
+          <ol class="comments" *ngIf="showComments">
+            <li>
+              <div *ngFor="let comment of comments"  class="post-comment-block" >
+                <div class="img-thumbnail"> <img src="https://latelierduformateur.fr/wp-content/uploads/2018/03/avatar-1606916_960_720.png" alt="avatar"> </div>
+                <!--<button class="btn btn-link btn-xs btn-flat-line pull-right" (click)="replayCommentBtnClick()">Reply</button>-->
+                <h5 class="no-margin-bottom">{{comment.commentedBy}} </h5>
+                <span class="meta-data">{{comment.commentedAt}}</span>
+                <div class="clearfix white-space-10"></div>
+                <p>{{comment.commentText}}</p>
+              </div>
+              
+            </li>
+          </ol>
+
+          <ol class="comments" *ngIf="showCommentsUpdate">
+            <li>
+              <div *ngFor="let comment of commentsUpdated" class="post-comment-block">
+                <div class="img-thumbnail"> <img src="assets/theme/images/people/1.jpg" alt="avatar"> </div>
+                <h5 class="no-margin-bottom">{{comment.commentedBy}} <small>says:</small></h5>
+                <span class="meta-data">{{comment.commentedAt | date:'dd/MM/yyyy hh:mm'}}</span>
+                <div class="clearfix white-space-10"></div>
+                <p>{{comment.commentText}}</p>
+              </div>
+
+            </li>
+          </ol>
+
+
+          <div class="white-space-30"></div>
+          <h4 class="color-dark text-uppercase text-bold">POST A COMMENT</h4>
+
+          <!-- FORM COMMENTS  -->
+          <form>
+            <div class="row">
+              <div class="col-md-4 ">
+                <div class="form-group">
+                  <label>Your Name (*)</label>
+                  <input type="text" class="form-control form-flat" name="fullname" [(ngModel)]="comment.commentedBy">
+                </div>
+              </div>
+              <div class="col-md-4 ">
+                <div class="form-group">
+                  <label>Email (*)</label>
+                  <input type="email" class="form-control form-flat" name="email" [(ngModel)]="comment.email">
+                </div>
+              </div>
+              <!--<div class="col-md-4 ">
+
+                <div class="form-group">
+                  <label>Website</label>
+                  <input type="email" class="form-control form-flat" name="website">
+                </div>
+              </div>-->
+            </div>
+
+            <div class="form-group">
+              <label>Your Comment (*)</label>
+              <textarea class="form-control form-flat" name="message" rows="8" [(ngModel)]="comment.commentText"></textarea>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-flat-solid primary-btn" (click)="submitComment(comment)">Submit Comment</button>
+            </div>
+          </form><!-- END FORM COMMENTS  -->
+
+          <div class="white-space-30"></div>
+        </div>
+      </div>
+    </div>
+  </div><!--END BLOG CONTENT  -->
+  <!-- PARALLAX BTNS  -->
+  <div class="parallax-bg white-light bg1">
+    <div class="container">
+      <div class="padding30 text-center relative">
+        <a href="#" class="btn btn-flat-line btn-default light-font btn-xs"><i class="fa fa-angle-left"></i>  PREV POST</a>
+        <span class="space-inline-15 hidden-xs"></span>
+        <a href="#" class="btn btn-flat-line btn-default light-font btn-xs">NEXT POST <i class="fa fa-angle-right"></i> </a>
+      </div>
+    </div>
+  </div><!-- END PARALLAX BTNS  -->
+
+</section>

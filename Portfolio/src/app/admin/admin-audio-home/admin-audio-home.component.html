@@ -1,0 +1,167 @@
+
+<section id="audio" class="block-section">
+    <button [routerLink]="['/admin']" class="m-1 btn btn-light btn-outline-primary">Back to home</button>
+  <div class="block-page">
+    <div class="container-medium">
+      <div class="row">
+        <button type="button" class="btn btn-primary float-right m-2" 
+data-toggle="modal" data-target="#exampleModal"
+(click)="showCreateAudio()"
+data-backdrop="static" data-keyboard="false">
+    Create Audio
+  </button>
+
+<table class="table table-striped">
+  <thead>
+      <tr>
+          <th>Title</th>
+          <th>Audio</th>
+          <th>Album</th>
+          
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let audio of audios">
+          <td>{{audio.title}}</td>
+        <td>
+            <audio controls>
+                <source src="../api/docs/{{audio.audioName}}" type="audio/wav">
+            </audio>
+        </td>
+        <td>{{audio.album}}</td>
+          <td>
+              <button type="button" class="btn btn-light mr-1"
+              data-toggle="modal" data-target="#exampleModal"
+(click)="showEditAudio(audio)"
+data-backdrop="static" data-keyboard="false"
+              >
+              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+              </svg>
+              </button>
+              <button type="button" class="btn btn-light mr-1"
+              (click)="deleteAudio(audio)"
+              >
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                </svg>
+              </button>
+          </td>
+      </tr>
+  </tbody>
+</table>
+<div *ngIf="showCreate" id="createAudioDiv">
+  <h3> Create Audio</h3>
+  <form novalidate="" class="ng-pristine ng-valid ng-touched" #form="ngForm">
+
+    <div class="row">
+       <div class="col-md-4">
+          <div class="form-group">
+              <label>Title(*)</label>
+              <input class="form-control form-flat ng-untouched ng-pristine ng-valid" placeholder="Title"
+              name="title" #title="ngModel" [(ngModel)]="audio.title" required [class.invalid]="title.invalid
+              && title.touched">
+            </div>
+       </div>
+
+       <div class="col-md-4">
+        <div class="form-group">
+            <label>Album (*)</label>
+            <select class="form-control form-flat ng-untouched ng-pristine ng-valid" name="album" id="album" [(ngModel)]="audio.album"
+            #album="ngModel" required [class.invalid]="album.invalid && album.touched" >
+            <option [ngValue]="'Herbst in Peking „To be hip“'">{{ ("Herbst in Peking „To be hip“") }}</option>
+            <option [ngValue]="'Project Skull „Der müde Tod“'">{{ ("Project Skull „Der müde Tod“") }}</option>
+            <option [ngValue]="'The crack-up collective „Adventure stories“'">{{ ("The crack-up collective „Adventure stories“") }}</option>
+            <option [ngValue]="'when the hands point up - the excitement starts! „debut“'">{{ ("when the hands point up - the excitement starts! „debut“") }}</option>
+            </select>
+        </div>
+    </div>
+
+     <div class="col-md-4">
+        <div _ngcontent-qsp-c48="" class="form-group">
+            <label _ngcontent-qsp-c48="">Upload</label>
+            <div _ngcontent-qsp-c48="" class="clearfix">
+
+                <audio controls *ngIf="showAudio">
+                    <source src="{{audioSrc}}" type="audio/wav">
+                </audio>
+
+               
+                <input _ngcontent-qsp-c48="" type="file" class="btn btn-flat-solid btn-file btn-xs btn-default clearfix" 
+                #upload="ngModel" [(ngModel)]="audio.file"
+                (change)="fileChange($event)"/>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <button (click)="createAudio(audio);"  class="btn btn-flat-solid primary-btn" [disabled]="form.invalid">Create Audio</button>
+    </div>
+ </form>
+
+</div>
+
+
+<div *ngIf="showEdit" class="editAudioDiv">
+  <h3> Edit Audio</h3>
+  <form novalidate="" class="ng-pristine ng-valid ng-touched" #form="ngForm">
+
+    <div class="row">
+       <div class="col-md-4">
+          <div class="form-group">
+              <label>Title(*)</label>
+              <input class="form-control form-flat ng-untouched ng-pristine ng-valid" placeholder="Title"
+              name="title" #title="ngModel" [(ngModel)]="editedAudio.title" required [class.invalid]="title.invalid
+              && title.touched">
+            </div>
+       </div>
+
+       <div class="col-md-4">
+        <div class="form-group">
+            <label>Album (*)</label>
+            <select class="form-control form-flat ng-untouched ng-pristine ng-valid" name="album" id="album" [(ngModel)]="editedAudio.album"
+            #album="ngModel" required [class.invalid]="editedAudio.invalid && editedAudio.touched">
+            <option [ngValue]="'Herbst in Peking „To be hip“'">{{ ("Herbst in Peking „To be hip“") }}</option>
+            <option [ngValue]="'Project Skull „Der müde Tod“'">{{ ("Project Skull „Der müde Tod“") }}</option>
+            <option [ngValue]="'The crack-up collective „Adventure stories“'">{{ ("The crack-up collective „Adventure stories“") }}</option>
+            <option [ngValue]="'when the hands point up - the excitement starts! „debut“'">{{ ("when the hands point up - the excitement starts! „debut“") }}</option>
+            </select>
+        </div>
+    </div>
+
+     <div class="col-md-4">
+        <div _ngcontent-qsp-c48="" class="form-group">
+            <label _ngcontent-qsp-c48="">Upload</label>
+            <div _ngcontent-qsp-c48="" class="clearfix">
+
+                <audio controls *ngIf="showAudio">
+                    <source src="{{audioSrc}}" type="audio/wav">
+                </audio>
+                <audio controls *ngIf="!showAudio">
+                    <source src="../api/docs/{{editedAudio.audioName}}" type="audio/wav">
+                </audio>
+
+               
+                <input _ngcontent-qsp-c48="" type="file" class="btn btn-flat-solid btn-file btn-xs btn-default clearfix"
+                #upload="ngModel" [(ngModel)]="editedAudio.file"
+                (change)="fileChange($event)"/>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <button (click)="editAudio(editedAudio);"  class="btn btn-flat-solid primary-btn" [disabled]="form.invalid">Edit Audio</button>
+    </div>
+ </form>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+
+</section>
