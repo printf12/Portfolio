@@ -1,29 +1,66 @@
 import { createReducer, on } from '@ngrx/store';
-import * as ProductActions from '../actions/product.actions';
 import { Product } from '../models/product.model';
+import { loadProductsSuccess, loadProductsFailure, loadProducts, loadProduct, loadProductSuccess, loadProductFailure } from '../actions/product.actions';
 
 export interface ProductState {
   products: Product[];
-  isLoading: boolean;
-  error: string | null;
+  product: Product | null;
+  total: number;
+  skip: number;
+  limit: number;
+  loading: boolean;
+  error: any;
+  searchQuery: string | undefined;
 }
 
-const initialState: ProductState = {
+export const initialState: ProductState = {
   products: [],
-  isLoading: false,
-  error: null
+  product : null,
+  total: 0,
+  skip: 0,
+  limit: 20,
+  loading: false,
+  error: null,
+  searchQuery: ''
 };
 
 export const productReducer = createReducer(
-    initialState,
-    on(ProductActions.loadProducts, state => ({ ...state, isLoading: true, error: null })),
-    on(ProductActions.loadProductsSuccess, (state, { products }) => ({
-      ...state,
-      products,
-      isLoading: false
-    })),
-    on(ProductActions.loadProductsFailure, (state, { error }) => ({
-      ...state,
-      isLoading: false,
-      error
-    })))
+  initialState,
+  on(loadProducts, (state, {searchQuery}) => ({
+    ...state,
+    loading: true,
+    searchQuery: searchQuery
+  })),
+  on(loadProductsSuccess, (state, { products, total, skip, limit }) => ({
+    ...state,
+    products,
+    total,
+    skip,
+    limit,
+    loading: false,
+    error: null
+  })),
+  on(loadProductsFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error,
+  })),
+
+  on(loadProduct, (state) => ({
+    ...state,
+    product: null,
+    loading: true,
+    error: null,
+  })),
+  on(loadProductSuccess, (state, { product }) => ({
+    ...state,
+    product,
+    loading: false,
+    error: null,
+  })),
+  on(loadProductFailure, (state, { error }) => ({
+    ...state,
+    loading: false,
+    error,
+  }))
+);

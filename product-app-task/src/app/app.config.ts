@@ -8,11 +8,15 @@ import { productReducer } from './store/reducers/product.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { ProductEffects } from './store/effects/product.effects';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay()),
-  provideHttpClient(withFetch()),
-  provideStore({ products: productReducer }),
-  provideEffects([ProductEffects]),
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes), 
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(),
+    provideStore({ products: productReducer, product: productReducer }),
+    provideEffects([ProductEffects]), provideAnimationsAsync(),
   ],
 };

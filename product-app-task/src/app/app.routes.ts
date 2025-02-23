@@ -3,6 +3,7 @@ import { ProductDetailsViewComponent } from './components/product-details-view/p
 import { ProductListViewComponent } from './components/product-list-view/product-list-view.component';
 
 export const routes: Routes = [
-    { path: 'products', component: ProductListViewComponent }, // Add route for product list
-    { path: '', redirectTo: '/products', pathMatch: 'full' }, // Redirect root to /products
+    { path: 'products', component: ProductListViewComponent }, 
+    { path: 'products/:id', component: ProductDetailsViewComponent }, 
+    { path: '', redirectTo: 'products', pathMatch: 'full' },
 ];
